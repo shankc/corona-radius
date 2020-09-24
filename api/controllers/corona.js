@@ -10,7 +10,7 @@ module.exports = {
     success: {},
   },
 
-  fn: async function () {
+  fn: async function (inputs, exits) {
     let countryData = await sails.helpers.getAllData();
     let countryCovidRecords = [];
 
@@ -75,6 +75,8 @@ module.exports = {
             filter: {stateName: stateName, districtName: districtName},
             initialValues: val
           });
+
+          return exits.success(dbResponse);
         });
       });
       // let stateRecord = await CountryStates.findOne(value)

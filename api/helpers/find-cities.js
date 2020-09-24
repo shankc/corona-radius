@@ -24,10 +24,21 @@ module.exports = {
 
   fn: async function(inputs, exits) {
     console.log(inputs);
+
+    function serialize(x) {
+      if (Number(x) === x && x % 1 !== 0) {
+        return x;
+      }
+      else if (x instanceof String){
+        return  parseFloat(x.trim());
+      }
+    }
+
     let nearByCities = [];
     await inputs.model.stream().eachRecord(async (record) => {
-      let lat = parseFloat(record.latitude.trim());
-      let long = parseFloat(record.longitude.trim());
+      let lat = serialize(record.latitude);
+      let long = serialize(record.longitude);
+
       let isInsideCircle = false;
       try {
         if ((lat && long) && lat !== '' && long !== ''){

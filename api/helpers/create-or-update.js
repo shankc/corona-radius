@@ -26,7 +26,10 @@ module.exports = {
     if (!existingRecord) {
       //create new record
       try {
-        await inputs.model.create(inputs.initialValues);
+        let dbRecord = await inputs.model.create(inputs.initialValues);
+        if (dbRecord) {
+          exits.success(dbRecord);
+        }
       }
       catch (err) {
         console.log(err);
@@ -35,9 +38,14 @@ module.exports = {
     else {
       // update record
       try {
-        await inputs.model.updateOne({
+        let dbRecord = await inputs.model.updateOne({
           where: inputs.filter
         }).set(inputs.initialValues);
+
+        if (dbRecord) {
+          exits.success(dbRecord);
+        }
+
       }
       catch (err) {
         console.log(err);

@@ -29,7 +29,7 @@ module.exports = {
         }
       });
 
-      if(citiesAtGivenRadius) {
+      if (citiesAtGivenRadius) {
         let nearByCities = citiesAtGivenRadius.map(c => c.city_name);
         let nearByCitiesCovidData = await sails.helpers.getCityCovidData.with({
           cities: nearByCities
