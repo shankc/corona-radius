@@ -72,7 +72,7 @@ module.exports = {
       ****************************************************************************/
       // ssl: true,
       adapter: 'sails-mongo',
-      url: 'mongodb+srv://root:root@cluster0.l8rpq.mongodb.net/corona_india'
+      url: 'mongodb://root:root@cluster0.l8rpq.mongodb.net/corona_india'
 
     },
 
