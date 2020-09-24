@@ -74,7 +74,7 @@ module.exports = {
       adapter: 'sails-mongo',
       // url: 'mongodb://root:root@cluster0.l8rpq.mongodb.net/corona_india'
       host: 'cluster0.l8rpq.mongodb.net',
-      username: 'root',
+      user: 'root',
       password: 'root',
       port: 27017,
       database: 'corona_india'
