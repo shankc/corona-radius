@@ -73,12 +73,9 @@ module.exports = {
       // ssl: true,
       adapter: 'sails-mongo',
       // url: 'mongodb://root:root@cluster0.l8rpq.mongodb.net/corona_india'
-      host: 'cluster0-shard-00-02.l8rpq.mongodb.net',
-      user: 'root',
-      password: 'root',
-      port: 27017,
-      database: 'corona_india'
-
+      url: 'mongodb://root:root@cluster0.l8rpq.mongodb.net:27017/corona_india',
+      ssl: true,
+      replicaSet: 'cluster0-shard-00-02'
     },
 
   },
