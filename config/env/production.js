@@ -252,8 +252,7 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     onlyAllowOrigins: [
-      'https://example.com',
-      'https://staging.example.com',
+      'https://corona-radius.herokuapp.com',
     ],
 
 
