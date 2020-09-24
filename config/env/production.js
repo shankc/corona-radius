@@ -76,6 +76,7 @@ module.exports = {
       host: 'cluster0.l8rpq.mongodb.net',
       username: 'root',
       password: 'root',
+      port: 27017,
       database: 'corona_india'
 
     },
