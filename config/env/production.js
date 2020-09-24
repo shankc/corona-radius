@@ -73,7 +73,7 @@ module.exports = {
       // ssl: true,
       adapter: 'sails-mongo',
       // url: 'mongodb://root:root@cluster0.l8rpq.mongodb.net/corona_india'
-      url: 'mongodb://root:root@cluster0.l8rpq.mongodb.net:27017/corona_india',
+      url: 'mongodb://root:root@cluster0.l8rpq.mongodb.net/corona_india',
       ssl: true,
       replicaSet: 'cluster0-shard-00-02'
     },
