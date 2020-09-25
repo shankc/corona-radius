@@ -71,10 +71,9 @@ module.exports = {
       *                                                                           *
       ****************************************************************************/
       // ssl: true,
-      adapter: require('sails-mongo'),
+      adapter: 'sails-mongo',
       // url: 'mongodb://root:root@cluster0.l8rpq.mongodb.net/corona_india'
-      url: 'mongodb://root:root@cluster0.l8rpq.mongodb.net:27017/corona_india',
-      ssl: true,
+      url: 'mongodb://root:root123@cluster0-shard-00-00.l8rpq.mongodb.net:27017,cluster0-shard-00-01.l8rpq.mongodb.net:27017,cluster0-shard-00-02.l8rpq.mongodb.net:27017/corona_india?ssl=true&replicaSet=atlas-uerjon-shard-0&authSource=admin&retryWrites=true&w=majority',
     },
 
   },
