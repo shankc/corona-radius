@@ -29,7 +29,7 @@ module.exports = {
       if (Number(x) === x && x % 1 !== 0) {
         return x;
       }
-      else if (x instanceof String){
+      else if (typeof x === 'string' || x instanceof String){
         return  parseFloat(x.trim());
       }
     }
