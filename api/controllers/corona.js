@@ -69,14 +69,18 @@ module.exports = {
           let stateName = val['stateName'];
 
           let districtName = val['districtName'];
+          try {
+            let dbResponse = await sails.helpers.createOrUpdate.with({
+              model: sails.models.countrystates,
+              filter: {stateName: stateName, districtName: districtName},
+              initialValues: val
+            });
 
-          let dbResponse = await sails.helpers.createOrUpdate.with({
-            model: sails.models.countrystates,
-            filter: {stateName: stateName, districtName: districtName},
-            initialValues: val
-          });
-
-          return exits.success(dbResponse);
+            return exits.success(dbResponse);
+          }
+          catch(err) {
+            console.log(err);
+          }
         });
       });
       // let stateRecord = await CountryStates.findOne(value)

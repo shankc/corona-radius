@@ -12,14 +12,19 @@ module.exports = {
       let cityName = val['cityName'];
       let districtName = val['districtName'];
 
-      let dbResponse = await sails.helpers.createOrUpdate.with({
-        model: sails.models.centers,
-        filter: {stateName: stateName, cityName: cityName, districtName: districtName},
-        initialValues: val
-      });
+      try{
+        let dbResponse = await sails.helpers.createOrUpdate.with({
+          model: sails.models.centers,
+          filter: {stateName: stateName, cityName: cityName, districtName: districtName},
+          initialValues: val
+        });
 
-      if (dbResponse) {
-        return exits.success(dbResponse);
+        if (dbResponse) {
+          return exits.success(dbResponse);
+        }
+      }
+      catch(err) {
+        console.log(err);
       }
     });
   }
