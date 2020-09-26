@@ -8,6 +8,7 @@ module.exports = {
   fn: async function (inputs, exits) {
 
     let hospitalData = this.req.body;
+
     _.forEach(hospitalData,  async (val, key) => {
       let stateName = val['stateName'];
       let cityName = val['cityName'];
@@ -19,11 +20,12 @@ module.exports = {
           filter: {stateName: stateName, cityName: cityName, districtName: districtName},
           initialValues: val
         });
-        return exits.success(dbResponse);
       }
       catch(err) {
         console.log(err);
       }
     });
+
+    exits.success('Record are being inserted');
   }
 };

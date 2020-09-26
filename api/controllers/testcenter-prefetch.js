@@ -18,15 +18,13 @@ module.exports = {
           filter: {stateName: stateName, cityName: cityName, districtName: districtName},
           initialValues: val
         });
-
-        if (dbResponse) {
-          return exits.success(dbResponse);
-        }
       }
       catch(err) {
         console.log(err);
       }
     });
+
+    exits.success('Records are being inserted');
   }
 
 };

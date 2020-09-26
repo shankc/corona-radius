@@ -75,15 +75,14 @@ module.exports = {
               filter: {stateName: stateName, districtName: districtName},
               initialValues: val
             });
-
-            return exits.success(dbResponse);
           }
           catch(err) {
             console.log(err);
           }
         });
       });
-      // let stateRecord = await CountryStates.findOne(value)
     });
+
+    exits.success('Records are being inserted');
   },
 };
