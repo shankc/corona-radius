@@ -33,9 +33,9 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
   'GET /api/get_corona_india':           { action: 'corona' },
-  'GET /api/v1/fetch-nearest-covid':     { action: 'covid-radius'},
+  'POST /api/v1/fetch-nearest-covid':     { action: 'covid-radius'},
   'POST /api/v1/populate-hospital-data': { action: 'hospital-prefetch'},
-  'GET /api/v1/get-nearby-hospitals' :   { action: 'hospital-radius'},
+  'POST /api/v1/get-nearby-hospitals' :   { action: 'hospital-radius'},
   'POST /api/v1/populate-test-center-data': { action: 'testcenter-prefetch'},
-  'GET /api/v1/get-nearby-testcenters':   { action: 'testcenter-radius'}
+  'POST /api/v1/get-nearby-testcenters':   { action: 'testcenter-radius'}
 };
